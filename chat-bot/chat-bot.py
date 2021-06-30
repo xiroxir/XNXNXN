@@ -1,7 +1,15 @@
+import random
+chepotvet1 = 0
+chepotvet2 = 0
+chepotvet3 = 0
+chepotvet4 = 0
+chepotvet5 = 0
+chepotvet6 = 0
+chepotvet7 = 0
 print("Чтобы начать общаться с чат-ботом напишите play")
 play = input("Введите play:")
 if play == "play":
-    print("Вы начали чат с чат-ботом, введите команду, чтобы продолжить.")
+    print("Вы начали чат с чат-ботом, введите команду, чтобы продолжить.Чтобы перестать общаться с чат-ботом введите команду exit")
     comand = input("Введите команду:")
     while comand != "exit":
         if comand == "Анекдот":
@@ -19,23 +27,39 @@ if play == "play":
                 print("Крабо" + crabotvet)
                 crabotvet = input("Введите любое слово:")
         elif comand == "Чепуха":
-            print("Вы начали мини-игру Чепуха, вы должны отвечать на вопросы и в конце посмотрите, что получится. Чтобы выйти из игры напишите Выйти")
+            print("Вы начали мини-игру Чепуха, вы должны отвечать на вопросы и в конце посмотрите, что получится.")
             print("Кто?")
-            while 1chepotvet != "Выйти" or 2chepotvet!= "Выйти" or 3chepotvet!= "Выйти" or 4chepotvet!= "Выйти" or 5chepotvet!= "Выйти" or 6chepotvet!= "Выйти" or 7chepotvet!= "Выйти" != "Выйти":
-                1chepotvet = input("Введите ответ")
-                print("С кем?")
-                2chepotvet = input("Введите ответ")
-                print("Где?")
-                3chepotvet = input("Введите ответ")
-                print("Когда?")
-                4chepotvet = input("Введите ответ")
-                print("Что делали?")
-                5chepotvet = input("Введите ответ")
-                print("Что им сказали?")
-                6chepotvet = input("Введите ответ")
-                print("Чем всё закончилось?")
-                7chepotvet = input("Введите ответ")
-                print(1chepotvet + \n + 2chepotvet + \n + 3chepotvet + \n + 4chepotvet + \n + 5chepotvet + \n + "Им сказали:" + 6chepotvet + \n + "Это закончилось" + 7chepotvet")
+            chepotvet1 = input("Введите ответ:")
+            print("С кем?")
+            chepotvet2 = input("Введите ответ:")
+            print("Где?")
+            chepotvet3 = input("Введите ответ:")
+            print("Когда?")
+            chepotvet4 = input("Введите ответ:")
+            print("Что делали?")
+            chepotvet5 = input("Введите ответ:")
+            print("Что им сказали?")
+            chepotvet6 = input("Введите ответ:")
+            print("Чем всё закончилось?")
+            chepotvet7 = input("Введите ответ:")
+            print(chepotvet1 + '\n' + chepotvet2 + '\n' + chepotvet3 + '\n' + chepotvet4 + '\n' + chepotvet5 + '\n' + "Им сказали:" + chepotvet6 + '\n' + "Это закончилось " + chepotvet7)
+        elif comand == "Угадай число":
+            print("Отгадай число от 1 до 25")
+            chislo = input("Введите число:")
+            cagadchislo = random.randint(1,25)
+            while int(chislo) != cagadchislo:
+                print("Неправильно")
+                if int(chislo)>cagadchislo:
+                    print("Загаданное число меньше")
+                    chislo = input("Введите число:")
+                else:
+                    print("Загаданное число больше")
+                    chislo = input("Введите число:")
+            print("Вы отгадали")
+        elif comand == "Рыба фугу ест морковь":
+            print("ььеегх")
+        else:
+            print("Я не знаю такой команды...")
         comand = input("Введите команду:")
 
                 
