@@ -1,0 +1,7 @@
+import pyautogui
+import time
+pyautogui.hotkey('ctrl', 'alt', 'g')
+pyautogui.hotkey('ctrl', 't')
+time.sleep(1)
+pyautogui.write('hfpevty kb z?')
+pyautogui.press('enter')
