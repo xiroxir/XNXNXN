@@ -40,11 +40,11 @@ if play == "play":
             redak2 = input('Введите имя элемента, на что вы хотите отредактировать:')
             if num5 in cpicok:
                 for i in range (0, len(cpicok)):
-                    if list[i]==num5:
-                        list[i]=redak2
+                    if cpicok[i]==num5:
+                        cpicok[i]=redak2
                         print('Элемент успешно отредактирован')
                     else:
                         print('Упс, что-то пошло не так')
         else:
             print('Данной команды не обнаружено')
-        comand = input('Введите команду:')        
+        comand = input('Введите команду:')     
