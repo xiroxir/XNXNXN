@@ -20,8 +20,9 @@ def proverka():
             print('Ошибка, -одно очко')
 def podchet():
     global genius, ochki, comand
+    py.press('backspace')
     comand = 0
-    time.sleep(1)
+    time.sleep(0.5)
     print(ochki)
     ochki = 0
     
@@ -33,5 +34,5 @@ while comand != 'Exit':
         num2 = random.randint(1, 3)
         num3 = random.randint(1, 3)
         print(num1, num2, num3)
-        time.sleep(2)
+        time.sleep(1)
     comand = input("Введите команду:")
