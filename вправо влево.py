@@ -14,47 +14,44 @@ comand = input('Введите команду:')
 while comand != 'Выход':
     spicok[yO][xO] = '*'
     if comand == 'Вправо':
-        try:
+        if xO != 9:
             xO = xO + 1
             spicok[yO][xO] = 'O'
             for pipi in spicok:
                 for pypy in pipi:
                     print(pypy + " ", end='')
                 print()
-        except:
+        else:
             print('Отстань')
-        comand = input('Введите команду:')
     elif comand == 'Влево':
-        try:
+        if xO != 0:
             xO = xO - 1
             spicok[yO][xO] = 'O'
             for pipi in spicok:
                 for pypy in pipi:
                     print(pypy + " ", end='')
                 print()
-        except:
+        else:
             print('Отстань')
-        comand = input('Введите команду:')
     elif comand == 'Вверх':
-        try:
+        if yO != 0:
             yO = yO - 1
             spicok[yO][xO] = 'O'
             for pipi in spicok:
                 for pypy in pipi:
                     print(pypy + " ", end='')
                 print()
-        except:
+        else:
             print('Отстань')
-        comand = input('Введите команду:')
     elif comand == 'Вниз':
-        try:
+        if yO != 9:
             yO = yO + 1
             spicok[yO][xO] = 'O'
             for pipi in spicok:
                 for pypy in pipi:
                     print(pypy + " ", end='')
                 print()
-        except:
+        else:
             print('Отстань')
-        comand = input('Введите команду:')
+    comand = input('Введите команду:')
 print('Конец')
