@@ -6,6 +6,9 @@ ochki = 0
 
 def vivod():
     global hp, ochki
+    if hp == 0:
+        print('Проигрыш')
+        exit()
     print(hp, ochki)
     for pipi in spicok:
             for pypy in pipi:
