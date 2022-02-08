@@ -10,4 +10,7 @@ C = int(input("Введите первое число:"))
 D = int(input("Введите второе число:"))
  
 print_num(C, D)
+
+list_ = input()
+абоба
         
