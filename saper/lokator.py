@@ -1,16 +1,17 @@
 import mylib
-mylib.mingenerator(mylib.pole)       
-mylib.vyvodPolya(mylib.pole)
-print()
+mylib.mingenerator(mylib.pole)
+
+mylib.vyvodPolya(mylib.vidimost_polya)
+
 mylib.proverka(mylib.pole)
-mylib.vyvodPolya(mylib.pole)
-mylib.game = True
+print()
 while mylib.game:
     try:
         stroka = int(input("Введите номер строки"))
         stolb = int(input("Введите номер столбца"))
         mylib.check(stroka-1,stolb-1)
-        mylib.vyvodPolya(mylib.pole)
+        print('mylib.game ',mylib.game)
+        mylib.vyvodPolya(mylib.vidimost_polya)
         if mylib.isOpen():
             mylib.game = False
     except:

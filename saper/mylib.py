@@ -80,7 +80,7 @@ def proverka(pole):
 
 
 def check(stroka,stolb):
-    
+    global game
     if vidimost_polya[stroka][stolb] == "•":
         vidimost_polya[stroka][stolb] = pole[stroka][stolb]
         if pole[stroka][stolb] == "*":
@@ -103,6 +103,7 @@ def check(stroka,stolb):
             if stolb+1 < len(pole[stroka]):
                 check(stroka,stolb+1)
         elif pole[stroka][stolb] == "O":
+            print('babah')
             game = False
                 
                 
