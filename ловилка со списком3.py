@@ -32,18 +32,20 @@ class Player:
         self.ochki = 0
     def right(self):
         if self.x < 8:
-            self.x = self.x+1
+            self.x = 1
         else:
             pass
     def left(self):
         if self.x>0:
-            self.x = self.x-1
+            self.x = -1
         else:
             pass
     def touch(self, spicok):
         pass
-        
-pole = [['*','*','*','*','*','*','*','*','*'],
+    
+class Pole:
+    def __init__(self):
+        self.pole = [['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
@@ -53,18 +55,39 @@ pole = [['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','O','*','*','*','*']]
+    def otris(self, drops, player):
+        self.pole=[['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*'],
+          ['*','*','*','*','*','*','*','*','*']]
+        self.pole[player.y][player.x] = "O"
+        for drop in drops:
+            if drop.visible = True:
+                self.pole[drop.y][drop.x] = drop.snachok
+        for pipi in self.pole:
+            for pypy in pipi:
+                print(pypy + " ", end='')
+            print()
+        print() 
+
 drops = []
 for step in range(3):
     drops.append(Drop('b'))
     drops.append(Drop('$'))
 
-kb.add_hotkey('left', left)
-kb.add_hotkey('right', right)
-bomba = Drop('b')
+player = Player()
+pole = Pole()
+kb.add_hotkey('left', player.left)
+kb.add_hotkey('right', player.right)
+#bomba = Drop('b')
 while True:
-    bomba.go()
-    print('y=',bomba.y)
-    print('timer=',bomba.timer)
-    print('visible=',bomba.visible)
-    print(" ")
-    time.sleep(2)
+    for drop in drops:
+        drop.go()
+    pole.otris(drops, player)
+    time.sleep(1)
