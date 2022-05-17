@@ -30,18 +30,30 @@ class Player:
         self.y = 9
         self.hp = 3
         self.ochki = 0
+        self.dx = 0
     def right(self):
         if self.x < 8:
-            self.x = 1
+            self.dx = 1
         else:
             pass
     def left(self):
         if self.x>0:
-            self.x = -1
+            self.dx = -1
         else:
-            pass
+            self.dx = 0
     def touch(self, spicok):
-        pass
+        for drop in spicok:
+            if self.x == drop.x and self.y == drop.y:
+                if drop.snachok == "b":
+                    self.hp = self.hp-1
+                else:
+                    self.ochki = self.ochki+1
+    def go(self):
+        self.x = self.x+self.dx
+        self.dx = 0
+    def vivod(self):
+        print("hp=", self.hp)
+        print("ochki=", self.ochki)
     
 class Pole:
     def __init__(self):
@@ -68,7 +80,7 @@ class Pole:
           ['*','*','*','*','*','*','*','*','*']]
         self.pole[player.y][player.x] = "O"
         for drop in drops:
-            if drop.visible = True:
+            if drop.visible == True:
                 self.pole[drop.y][drop.x] = drop.snachok
         for pipi in self.pole:
             for pypy in pipi:
@@ -85,9 +97,11 @@ player = Player()
 pole = Pole()
 kb.add_hotkey('left', player.left)
 kb.add_hotkey('right', player.right)
-#bomba = Drop('b')
 while True:
+    time.sleep(1.5) 
     for drop in drops:
         drop.go()
+    player.go()
+    player.touch(drops)
+    player.vivod()
     pole.otris(drops, player)
-    time.sleep(1)
