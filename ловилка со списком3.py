@@ -78,10 +78,10 @@ class Pole:
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*'],
           ['*','*','*','*','*','*','*','*','*']]
-        self.pole[player.y][player.x] = "O"
         for drop in drops:
             if drop.visible == True:
                 self.pole[drop.y][drop.x] = drop.snachok
+        self.pole[player.y][player.x] = "O"
         for pipi in self.pole:
             for pypy in pipi:
                 print(pypy + " ", end='')
@@ -103,5 +103,8 @@ while True:
         drop.go()
     player.go()
     player.touch(drops)
+    if player.hp == 0:
+        print("Вы проиграли")
+        break
     player.vivod()
     pole.otris(drops, player)
